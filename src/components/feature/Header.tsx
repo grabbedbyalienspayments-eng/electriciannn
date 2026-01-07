@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import ContactModal from './ContactModal';
 
@@ -12,16 +11,20 @@ export default function Header() {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <header className="bg-white shadow-sm sticky top-0 z-40">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
+            <button onClick={scrollToTop} className="flex items-center cursor-pointer">
               <h1 className="text-2xl font-bold text-[#007BFF]" style={{ fontFamily: '"Pacifico", serif' }}>
                 ElectroFix
               </h1>
-            </div>
+            </button>
             
             <nav className="hidden md:flex items-center space-x-8">
               <button 
